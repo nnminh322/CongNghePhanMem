@@ -4,6 +4,14 @@
  */
 package view;
 
+import controller.QuanLySinhHoatController;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import model.CuocHop;
+import model.DanhSachThamGia;
+
 /**
  *
  * @author nnminh322
@@ -15,6 +23,50 @@ public class QuanLySinhHoat extends javax.swing.JFrame {
      */
     public QuanLySinhHoat() {
         initComponents();
+        init();
+        hienthi();
+    }
+
+    public void init() {
+        this.quanLySinhHoatController = new QuanLySinhHoatController(this);
+        ActionListener action = new QuanLySinhHoatController(this);
+        this.jButton_lenLich.addActionListener(action);
+        this.jButton_sua.addActionListener(action);
+        this.jButton_in.addActionListener(action);
+        this.jButton_ghiNhan.addActionListener(action);
+        this.jButton_danhSach.addActionListener(action);
+    }
+
+    public void hienthi() {
+        hienthiCuocHop();
+        hienthiThongKe();
+    }
+
+    public void hienthiCuocHop() {
+        ArrayList<CuocHop> listCuocHop = this.quanLySinhHoatController.hienthiCuocHop();
+        DefaultTableModel model = (DefaultTableModel) jTable_lichHop.getModel();
+        model.setRowCount(0);
+        for (CuocHop cuocHop : listCuocHop) {
+            Object[] row = {
+                cuocHop.getMaCuocHop(),
+                cuocHop.getChuDe(),
+                cuocHop.getThoiGian(),
+                cuocHop.getDiaDiem(),};
+            model.addRow(row);
+        }
+    }
+
+    public void hienthiThongKe() {
+        ArrayList<DanhSachThamGia> listDanhSachThamGia = this.quanLySinhHoatController.hienthiThongKe();
+        DefaultTableModel model = (DefaultTableModel) jTable_thongKe.getModel();
+        model.setRowCount(0);
+        for (DanhSachThamGia danhSachThamGia : listDanhSachThamGia) {
+            Object[] row = {
+                danhSachThamGia.getMaHoKhau(),
+                danhSachThamGia.getChuHo(),
+                danhSachThamGia.getSoLanThamGia(),};
+            model.addRow(row);
+        }
     }
 
     /**
@@ -227,7 +279,7 @@ public class QuanLySinhHoat extends javax.swing.JFrame {
             }
         });
     }
-
+    public QuanLySinhHoatController quanLySinhHoatController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_danhSach;
     private javax.swing.JButton jButton_ghiNhan;
@@ -245,4 +297,21 @@ public class QuanLySinhHoat extends javax.swing.JFrame {
     private javax.swing.JTable jTable_lichHop;
     private javax.swing.JTable jTable_thongKe;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getjTable_lichHop() {
+        return jTable_lichHop;
+    }
+
+    public void setjTable_lichHop(JTable jTable_lichHop) {
+        this.jTable_lichHop = jTable_lichHop;
+    }
+
+    public JTable getjTable_thongKe() {
+        return jTable_thongKe;
+    }
+
+    public void setjTable_thongKe(JTable jTable_thongKe) {
+        this.jTable_thongKe = jTable_thongKe;
+    }
+
 }

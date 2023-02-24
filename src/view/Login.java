@@ -4,6 +4,12 @@
  */
 package view;
 
+import controller.LoginController;
+import java.awt.event.ActionListener;
+import javax.security.auth.login.LoginContext;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -11,6 +17,10 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.loginController = new LoginController(this);
+        ActionListener action =  new LoginController(this);
+        this.jButton_Login.addActionListener(action);
+        this.jButton_Clear.addActionListener(action);
     }
 
     /**
@@ -150,7 +160,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
-
+    public LoginController loginController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Clear;
     private javax.swing.JButton jButton_Login;
@@ -159,4 +169,21 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField_Password;
     private javax.swing.JTextField jTextField_Username;
     // End of variables declaration//GEN-END:variables
+
+    public JPasswordField getjPasswordField_Password() {
+        return jPasswordField_Password;
+    }
+
+    public void setjPasswordField_Password(JPasswordField jPasswordField_Password) {
+        this.jPasswordField_Password = jPasswordField_Password;
+    }
+
+    public JTextField getjTextField_Username() {
+        return jTextField_Username;
+    }
+
+    public void setjTextField_Username(JTextField jTextField_Username) {
+        this.jTextField_Username = jTextField_Username;
+    }
+
 }
