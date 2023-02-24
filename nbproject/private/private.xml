@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/ThemHoKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/ThayDoiHoKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/XemHoKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/ThemHoKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/ThayDoiNhanKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/LichSuThayDoi.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/TamTru.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/QuanLy.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/NhanKhauDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/XemNhanKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/TamTru.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/ChuyenKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/NhanKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/TamVang.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/ChuyenKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/ThemNhanKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/ThayDoiHoKhauDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/ThemNhanKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/KhaiTu.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/TachKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/ThemChuHo.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/TamTruTamVangDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/KhaiTuController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/HoKhauDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/TamVang.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/XemHoKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/TachKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/QuanLyController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/KhaiSinhController.java</file>
+        </group>
+    </open-files>
+</project-private>
