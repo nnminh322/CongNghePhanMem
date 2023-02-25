@@ -8,7 +8,6 @@ import dao.HoKhauDAO;
 import dao.NhanKhauDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -16,7 +15,6 @@ import model.HoKhau;
 import model.NhanKhau;
 import view.hokhau.ThemChuHo;
 import view.hokhau.ThemHoKhau;
-import view.nhankhau.ThemNhanKhau;
 
 /**
  *

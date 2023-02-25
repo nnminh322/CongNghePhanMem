@@ -29,6 +29,8 @@ public class ThongTinCuocHop extends javax.swing.JFrame {
         this.thongTinCuocHopController = new ThongTinCuocHopController(this);
         ActionListener action = new ThongTinCuocHopController(this);
         this.jButton_xacNhan.addActionListener(action);
+        this.jButton_kiemTra.addActionListener(action);
+        khoa();
     }
 
     public ThongTinCuocHop(QuanLySinhHoat quanLySinhHoat, CuocHop cuocHop) {
@@ -42,6 +44,21 @@ public class ThongTinCuocHop extends javax.swing.JFrame {
         this.jTextField_thoiGian.setText(cuocHop.getThoiGian());
         this.jTextField_diaDiem.setText(cuocHop.getDiaDiem());
         this.jTextField_maCuocHop.setEditable(false);
+    }
+
+    public void khoa() {
+        this.jTextField_thoiGian.setEditable(false);
+        this.jTextField_diaDiem.setEditable(false);
+        this.jTextField_chuDe.setEditable(false);
+
+    }
+
+    public void mo() {
+        this.jTextField_maCuocHop.setEditable(false);
+        this.jButton_kiemTra.setEnabled(false);
+        this.jTextField_thoiGian.setEditable(true);
+        this.jTextField_diaDiem.setEditable(true);
+        this.jTextField_chuDe.setEditable(true);
     }
 
     /**
@@ -63,6 +80,7 @@ public class ThongTinCuocHop extends javax.swing.JFrame {
         jTextField_thoiGian = new javax.swing.JTextField();
         jButton_xacNhan = new javax.swing.JButton();
         jButton_huy = new javax.swing.JButton();
+        jButton_kiemTra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,6 +106,8 @@ public class ThongTinCuocHop extends javax.swing.JFrame {
             }
         });
 
+        jButton_kiemTra.setText("Kiểm tra");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,7 +118,9 @@ public class ThongTinCuocHop extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField_maCuocHop, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField_maCuocHop, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton_kiemTra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(52, 52, 52)
@@ -125,7 +147,8 @@ public class ThongTinCuocHop extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField_maCuocHop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField_maCuocHop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_kiemTra))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
@@ -197,6 +220,7 @@ public class ThongTinCuocHop extends javax.swing.JFrame {
     private ThongTinCuocHopController thongTinCuocHopController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_huy;
+    private javax.swing.JButton jButton_kiemTra;
     private javax.swing.JButton jButton_xacNhan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

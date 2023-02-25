@@ -99,7 +99,35 @@ public class CuocHopDAO implements DAOInterface<CuocHop> {
 
     @Override
     public ArrayList<CuocHop> find(String Condition) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<CuocHop> listCuocHop = new ArrayList<CuocHop>();
+        try {
+            java.sql.Connection conn = new ConnectionToDB().getConnection();
+
+            java.sql.Statement st = conn.createStatement();
+
+            String sql = "SELECT * FROM CuocHop " + Condition;
+
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                String maCuocHop = rs.getString("maCuocHop");
+                String chuDe = rs.getString("chuDe");
+                String thoiGian = rs.getString("thoiGian");
+                String diaDiem = rs.getString("diaDiem");
+
+                CuocHop cuocHop = new CuocHop(maCuocHop, chuDe, thoiGian, diaDiem);
+
+                listCuocHop.add(cuocHop);
+            }
+
+            ConnectionToDB.close(conn);
+//            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+        } catch (SQLException ex) {
+            Logger.getLogger(HoKhauDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return listCuocHop;
+
     }
 
 }

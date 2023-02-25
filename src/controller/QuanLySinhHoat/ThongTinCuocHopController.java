@@ -7,6 +7,7 @@ package controller.QuanLySinhHoat;
 import dao.CuocHopDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.CuocHop;
 import view.sinhhoat.ThongTinCuocHop;
@@ -27,6 +28,13 @@ public class ThongTinCuocHopController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
         String tittle = thongTinCuocHop.getTitle();
+        if (actionCommand.equals("Kiểm tra")) {
+            if ((this.kiemtra(this.thongTinCuocHop.getjTextField_maCuocHop().getText()).isEmpty())) {
+                this.thongTinCuocHop.mo();
+            } else {
+                JOptionPane.showMessageDialog(thongTinCuocHop, "Mã cuộc họp đã tồn tại");
+            }
+        }
         if (actionCommand.equals("Xác nhận")) {
             String maCuocHop = thongTinCuocHop.getjTextField_maCuocHop().getText();
             String chuDe = thongTinCuocHop.getjTextField_chuDe().getText();
@@ -52,5 +60,10 @@ public class ThongTinCuocHopController implements ActionListener {
 
     public int update(CuocHop cuocHop) {
         return CuocHopDAO.getInstance().update(cuocHop);
+    }
+
+    public ArrayList<CuocHop> kiemtra(String maCuocHop) {
+        String Condition = "WHERE `MaCuocHop` LIKE '" + maCuocHop + "'";
+        return CuocHopDAO.getInstance().find(Condition);
     }
 }
