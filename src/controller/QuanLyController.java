@@ -8,14 +8,18 @@ import dao.HoKhauDAO;
 import dao.NhanKhauDAO;
 import dao.TamTruDAO;
 import dao.TamVangDAO;
+import dao.ThongKeDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.concurrent.locks.Condition;
 import javax.swing.JOptionPane;
 import model.HoKhau;
 import model.NhanKhau;
 import model.TamTru;
 import model.TamVang;
+import model.ThongKe;
 import view.hokhau.ChuyenKhau;
 import view.nhankhau.KhaiTu;
 import view.nhankhau.LichSuThayDoi;
@@ -150,6 +154,56 @@ public class QuanLyController implements ActionListener {
             tamVang.setTitle(actionCommand);
             tamVang.setVisible(true);
         }
+        if (actionCommand.equals("Tìm kiếm hộ khẩu")) {
+            if (quanlyView.getjComboBox_timKiemHoKhau().getSelectedItem().equals("Chủ hộ")) {
+                String Condition = "`hoTenChuHo` LIKE '%" + quanlyView.getjTextField_TuKhoaHoKhau().getText() + "%'";
+                quanlyView.timkiemHoKhau(this.timkiemHoKhau(Condition));
+
+            } else {
+                String Condition = "`soHoKhau` LIKE '%" + quanlyView.getjTextField_TuKhoaHoKhau().getText() + "%'";
+                quanlyView.timkiemHoKhau(this.timkiemHoKhau(Condition));
+            }
+        }
+        if (actionCommand.equals("Tìm kiếm nhân khẩu")) {
+            if (quanlyView.getjComboBox_timKiemNhanKhau().getSelectedItem().equals("CCCD")) {
+                String Condition = "`CCCD` LIKE '%" + quanlyView.getjTextField_TuKhoaNhanKhau().getText() + "%'";
+                quanlyView.timkiemNhanKhau(this.timkiemNhanKhau(Condition));
+
+            } else {
+                String Condition = "`hoTen` LIKE '%" + quanlyView.getjTextField_TuKhoaNhanKhau().getText() + "%'";
+                quanlyView.timkiemNhanKhau(this.timkiemNhanKhau(Condition));
+
+            }
+        }
+        if (actionCommand.equals("Thống kê theo độ tuổi và giới tính")) {
+            if (!quanlyView.getjComboBox_GioiTinh().getSelectedItem().equals("")) {
+                if (quanlyView.getjTextField_TuDoTuoi().getText().equals("") || quanlyView.getjTextField_DenDoTuoi().getText().equals("")) {
+                    JOptionPane.showMessageDialog(quanlyView, "Bạn chưa điền thông tin về tuổi cần thống kê");
+                } else {
+                    quanlyView.thongkeDoTuoiGioiTinh(this.thongkeNgaySinh(quanlyView.getjTextField_TuDoTuoi().getText(), quanlyView.getjTextField_DenDoTuoi().getText(), quanlyView.getjComboBox_GioiTinh().getSelectedItem().toString()));
+                }
+            } else {
+                if (!(quanlyView.getjTextField_TuDoTuoi().getText().equals("") && quanlyView.getjTextField_DenDoTuoi().getText().equals(""))) {
+                    JOptionPane.showMessageDialog(quanlyView, "Bạn chưa điền thông tin về giới tính cần thống kê");
+
+                }
+            }
+        }
+        if (actionCommand.equals("Thống kê theo tình trạng cư trú")) {
+
+            if ((quanlyView.getjDateChooser_tuNgay().getDate() == null) || (quanlyView.getjDateChooser_denNgay().getDate() == null) || quanlyView.getjComboBox_TinhTrang().getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(quanlyView, "Bạn chưa điền đầy đủ thông tin");
+            } else {
+                java.util.Date selectedDate1 = this.quanlyView.getjDateChooser_tuNgay().getDate();
+                java.sql.Date tuNgay = java.sql.Date.valueOf(selectedDate1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+
+                java.util.Date selectedDate2 = this.quanlyView.getjDateChooser_denNgay().getDate();
+                java.sql.Date denNgay = java.sql.Date.valueOf(selectedDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+
+                quanlyView.thongkeCuTru(this.thongkeTamTruTamVang(tuNgay, denNgay, quanlyView.getjComboBox_TinhTrang().getSelectedItem().toString()));
+            }
+
+        }
     }
 
     public ArrayList<NhanKhau> hienthiNhanKhau() {
@@ -166,5 +220,54 @@ public class QuanLyController implements ActionListener {
 
     public ArrayList<TamVang> hienthiTamVang() {
         return TamVangDAO.getInstance().selectAll();
+    }
+
+    public ArrayList<HoKhau> timkiemHoKhau(String Condition) {
+        return HoKhauDAO.getInstance().find(Condition);
+    }
+
+    public ArrayList<NhanKhau> timkiemNhanKhau(String Condition) {
+        return NhanKhauDAO.getInstance().find(Condition);
+    }
+
+    public ArrayList<ThongKe> thongkeTamTruTamVang(java.sql.Date tuNgay, java.sql.Date denNgay, String tinhTrang) {
+        String sql = "SELECT NhanKhau.hoTen, NhanKhau.GioiTinh, NhanKhau.soHoKhau, NhanKhau.ngaySinh, \n"
+                + "    CASE \n"
+                + "        WHEN TamTru.CCCD IS NOT NULL THEN 'tạm trú' \n"
+                + "        WHEN TamVang.CCCD IS NOT NULL THEN 'tạm vắng' \n"
+                + "        ELSE '' \n"
+                + "    END AS 'TinhTrang' \n"
+                + "FROM NhanKhau \n"
+                + "INNER JOIN (\n"
+                + "    SELECT CCCD, TuNgay, DenNgay \n"
+                + "    FROM TamTru \n"
+                + "    WHERE (TuNgay >= '" + tuNgay + "' AND TuNgay <= '" + denNgay + "') \n"
+                + "    UNION \n"
+                + "    SELECT CCCD, TuNgay, DenNgay \n"
+                + "    FROM TamVang \n"
+                + "    WHERE (TuNgay >= '" + tuNgay + "' AND TuNgay <= '" + denNgay + "') \n"
+                + ") AS Temp ON NhanKhau.CCCD = Temp.CCCD \n"
+                + "LEFT JOIN TamTru ON NhanKhau.CCCD = TamTru.CCCD AND Temp.TuNgay = TamTru.TuNgay AND Temp.DenNgay = TamTru.DenNgay \n"
+                + "LEFT JOIN TamVang ON NhanKhau.CCCD = TamVang.CCCD AND Temp.TuNgay = TamVang.TuNgay AND Temp.DenNgay = TamVang.DenNgay \n";
+        if (!tinhTrang.equals("Toàn bộ")) {
+            String condition = "WHERE \n"
+                    + "    (CASE \n"
+                    + "        WHEN TamTru.CCCD IS NOT NULL THEN 'tạm trú' \n"
+                    + "        WHEN TamVang.CCCD IS NOT NULL THEN 'tạm vắng' \n"
+                    + "        ELSE '' \n"
+                    + "    END) = '" + tinhTrang + "';";
+            sql += condition;
+
+        }
+        return ThongKeDAO.getInstance().find(sql);
+    }
+
+    public ArrayList<ThongKe> thongkeNgaySinh(String tuTuoi, String denTuoi, String gioiTinh) {
+        String sql = "SELECT hoTen, ngaySinh, gioiTinh, soHoKhau, ghiChu AS tinhTrang FROM NhanKhau WHERE YEAR(CURDATE()) - YEAR(ngaySinh) BETWEEN " + tuTuoi + " AND " + denTuoi + "";
+        if (!gioiTinh.equals("Toàn bộ")) {
+            String condition = " AND gioiTinh = '" + gioiTinh + "'";
+            sql += condition;
+        }
+        return ThongKeDAO.getInstance().find(sql);
     }
 }

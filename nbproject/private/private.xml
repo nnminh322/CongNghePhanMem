@@ -3,26 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/ThemHoKhau.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/ThayDoiHoKhau.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/CuocHopDAO.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/DKTamTru.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/ThayDoiNhanKhau.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/sinhhoat/DanhSachThamGia.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/LichSuThayDoi.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/QuanLySinhHoat/DanhSachThamGiaController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/TamTru.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/DanhSachThamGiaDAO.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/HoKhauController/XemHoKhauController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/QuanLy.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/NhanKhauDAO.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/XemNhanKhau.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/sinhhoat/GhiNhanThamGia.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/DKTamVang.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/sinhhoat/GiayMoi.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/DAOInterface.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/QuanLySinhHoat/ThongTinCuocHopController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/ChuyenKhau.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/DKTamTruController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/DKTamVangController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/TamTruDAO.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/HoKhau.java</file>
@@ -30,26 +21,42 @@
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/ThemNhanKhauController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/NhanKhau.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/TamVang.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/KhaiTuController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/ThayDoiHoKhauDAO.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/ThemNhanKhau.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/KhaiTu.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/TamVangDAO.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/Login.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/TachKhau.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/ThemChuHo.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/DanhSachThamGia.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/sinhhoat/HienThiDanhSachThamGia.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/HoKhauController/ChuyenKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/LoginController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/XemHoKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/HoKhauController/TachKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/KhaiSinh.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/HoKhauController/ThemHoKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/KhaiSinhController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/User.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/ThemHoKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/ThayDoiHoKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/QuanLySinhHoat/GhiNhanThamGiaController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/model/ThayDoiNhanKhau.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/DanhSachThamGiaDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/HoKhauController/XemHoKhauController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/NhanKhauDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/UserDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/congnghephanmem/CongNghePhanMem.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/sinhhoat/GiayMoi.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/QuanLySinhHoat/ThongTinCuocHopController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/DKTamTruController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/KhaiTuController.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/connection/ConnectionToDB.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/KhaiTu.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/TamVangDAO.java</file>
+            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/TachKhau.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/dao/HoKhauDAO.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/QuanLySinhHoatController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/QuanLySinhHoat.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/hokhau/XemHoKhau.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/HoKhauController/TachKhauController.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/sinhhoat/ThongTinCuocHop.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/view/nhankhau/KhaiSinh.java</file>
             <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/QuanLyController.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/HoKhauController/ThemHoKhauController.java</file>
-            <file>file:/Users/nnminh322/NetBeansProjects/CongNghePhanMem/src/controller/NhanKhauController/KhaiSinhController.java</file>
         </group>
     </open-files>
 </project-private>
