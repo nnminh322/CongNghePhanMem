@@ -15,6 +15,7 @@ import model.CuocHop;
 import model.DanhSachThamGia;
 import view.QuanLySinhHoat;
 import view.sinhhoat.GhiNhanThamGia;
+import view.sinhhoat.GiayMoi;
 import view.sinhhoat.HienThiDanhSachThamGia;
 import view.sinhhoat.ThongTinCuocHop;
 
@@ -28,6 +29,7 @@ public class QuanLySinhHoatController implements ActionListener {
     private ThongTinCuocHop thongTinCuocHop;
     private GhiNhanThamGia ghiNhanThamGia;
     private HienThiDanhSachThamGia hienThiDanhSachThamGia;
+    private GiayMoi giayMoi;
 
     public QuanLySinhHoatController(QuanLySinhHoat quanLySinhHoat) {
         this.quanLySinhHoat = quanLySinhHoat;
@@ -62,7 +64,16 @@ public class QuanLySinhHoatController implements ActionListener {
                 thongTinCuocHop.setVisible(true);
             }
         }
-
+        if (actionCommand.equals("In giấy mời")) {
+            int selected = this.quanLySinhHoat.getjTable_lichHop().getSelectedRow();
+            if (selected == -1) {
+                JOptionPane.showMessageDialog(quanLySinhHoat, "Bạn chưa chọn cuộc họp");
+            } else {
+                giayMoi = new GiayMoi(this.hienthiCuocHop().get(selected));
+                giayMoi.setTitle(actionCommand);
+                giayMoi.setVisible(true);
+            }
+        }
         if (actionCommand.equals("Ghi nhận tham gia")) {
             int selected = this.quanLySinhHoat.getjTable_lichHop().getSelectedRow();
             if (selected == -1) {

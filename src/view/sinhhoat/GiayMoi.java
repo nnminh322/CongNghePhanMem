@@ -4,6 +4,8 @@
  */
 package view.sinhhoat;
 
+import model.CuocHop;
+
 /**
  *
  * @author nnminh322
@@ -16,6 +18,13 @@ public class GiayMoi extends javax.swing.JFrame {
     public GiayMoi() {
         initComponents();
     }
+    
+    public GiayMoi(CuocHop cuocHop) {
+        initComponents();
+        this.jTextField_thoiGian.setText(cuocHop.getThoiGian());
+        this.jTextField_diaDiem.setText(cuocHop.getDiaDiem());
+        this.jTextField_chuDe.setText(cuocHop.getChuDe());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,17 +35,118 @@ public class GiayMoi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField_thoiGian = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField_diaDiem = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField_chuDe = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setText("Cộng hoà xã hội chủ nghĩa Việt Nam");
+
+        jLabel2.setText("Độc lập - Tự do - Hạnh Phúc");
+
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabel3.setText("Giấy mời họp tổ dân phố");
+
+        jLabel4.setText("Trận trọng kính mời ông/ bà trong tổ dân phố X đến dự cuộc họp của tổ dân phố");
+
+        jLabel5.setText("Thời gian cuộc họp");
+
+        jTextField_thoiGian.setEditable(false);
+
+        jLabel6.setText("Địa điểm ");
+
+        jTextField_diaDiem.setEditable(false);
+
+        jLabel7.setText("Để thảo luận về vấn đề");
+
+        jTextField_chuDe.setEditable(false);
+
+        jLabel8.setText("Cán bộ hành chính");
+
+        jLabel9.setText("(Ký tên, đóng dấu)");
+
+        jLabel10.setText("Rất mong ông/ bà có mặt để cuộc họp diễn ra thành công tốt đẹp!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel10)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField_chuDe, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+                                    .addComponent(jTextField_diaDiem)
+                                    .addComponent(jTextField_thoiGian))))))
+                .addContainerGap(116, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8))
+                .addGap(61, 61, 61))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel3)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel4)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField_thoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextField_diaDiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField_chuDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel10)
+                .addGap(21, 21, 21)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -78,5 +188,18 @@ public class GiayMoi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField_chuDe;
+    private javax.swing.JTextField jTextField_diaDiem;
+    private javax.swing.JTextField jTextField_thoiGian;
     // End of variables declaration//GEN-END:variables
 }
